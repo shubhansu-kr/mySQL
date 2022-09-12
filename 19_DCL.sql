@@ -40,3 +40,26 @@ REVOKE DELETE
 ON TEACHER 
 FROM USER_NAME
 
+-- Two types of privileges 
+
+-- 1. System Privileges 
+--   create system 
+--   create table
+--   create view 
+--   create synonyms 
+
+-- 2. Object privileges
+--      insert 
+--      delete
+--      update 
+
+-- Syntax to create user 
+-- create user userName identified by password;
+
+-- CREATE USER 'sudo'@'localhost' IDENTIFIED BY 'password'; 
+
+-- grant privileges to sudo 
+GRANT CREATE, ALTER, DROP, INSERT, UPDATE, DELETE, SELECT, REFERENCES, RELOAD on *.* TO 'sudo'@'localhost';
+
+
+`
