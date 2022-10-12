@@ -1,0 +1,40 @@
+-- %Type and %rowType
+
+-- Data type of the variable and colum should be same 
+-- Hardcoding variables creates anomalies/error 
+
+-- We can auto pick the column data type and size 
+-- Helps avoid unnecessary datatype conflicts 
+
+DECLARE 
+    -- SYNTAX 
+    -- VARIABLEnAME TABLEnAME.COLUMNnAME%TYPE;
+    SAL EMP.SALARY%TYPE;
+    -- SETS THE SAL VAR WITH DATA TYPE OF SALARY COLUMN 
+
+-- TO FETCH THE DATA OF AN ENTIRE ROW 
+    -- wE STORE JUST THE REFERENCE OF THE ROW INSTEAD OF COPYING THE
+    -- WHOLE DATA TO AVOID MEMORY WASTAGE 
+
+    -- SALARY 
+    -- ROWvARnAME TABLEnAME%ROWTYPE;
+    STUDrOW STUDENT%ROWTYPE;
+
+    -- sELECT INTO SYNTAX: 
+    -- SELECT COLUMNnAME INTO VARnAME FROM TABLEnAME WHERE CONDITION;
+    
+    SELECT * INTO STUDrOW  FROM STUDENT WHERE ID = 1;
+
+    -- NOW WE CAN ACCESS ALL THE OBJECTS OF THE FETCHED RECORD USING DOT 
+    -- OPERATOR 
+
+    -- STUDrOW.ID 
+    -- STUDrOW.NAME
+    -- STUDrOW.SECTION
+    -- STUDrOW.ROLL
+
+BEGIN 
+    DBMS_OUTPUT.PUT_LINE(STUDrOW.ID || STUDrOW.NAME || STUDrOW.SECTION0);
+
+END;
+
