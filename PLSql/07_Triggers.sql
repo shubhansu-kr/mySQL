@@ -41,3 +41,13 @@ BEGIN
         DBMS_OUTPUT.PUT_LINE('DATA IS BEING UPDATED');
     END IF;
 END;
+
+-- drop TRIGGER trigername;
+
+-- alter triger trigername disable;
+-- trigger is not dropped just turned off for the moment;
+
+-- alter table tablename disable all trigger;
+
+-- alter table tablename enable all trigger;
+-- alter table tablename enable triggername;
