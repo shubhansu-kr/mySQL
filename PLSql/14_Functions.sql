@@ -1,0 +1,55 @@
+-- Function is same as procedure
+-- The only difference is that a function can return a value 
+
+DECLARE 
+    NUM1 NUMBER (10);
+    NUM2 NUMBER (10);
+    MUL NUMBER (20);
+    SQ1 NUMBER (20);
+
+    -- CREATING A LOCAL FUNCTION
+    FUNCTION MULTI (NUM1 IN NUMBER, NUM2 IN NUMBER, SQ1 OUT NUMBER) 
+    RETURN NUMBER IS 
+        BEGIN 
+            MUL:= NUM2 * NUM1;
+            SQ1:= NUM1 * NUM1;
+            RETURN (MUL);
+        END MULTI;
+BEGIN 
+    NUM1 := 7659;
+    NUM2 := 3242;
+    DBMS_OUTPUT.PUT_LINE(MUL); -- DOES NOT PRINT ANYTHING SINCE MUL IS NULL
+    MUL := 21;
+    DBMS_OUTPUT.PUT_LINE(MUL); -- PRINTS 21 SINCE WE UPDATED THE VAL
+    MUL := MULTI(NUM1, NUM2, SQ1);
+
+    DBMS_OUTPUT.PUT_LINE(SQ1);
+
+    DBMS_OUTPUT.PUT_LINE(MUL);
+    DBMS_OUTPUT.PUT_LINE(MULTI(NUM1, NUM2, SQ1)); -- ALLOWED 
+
+END;
+
+-- Function is same as procedure
+-- The only difference is that a function can return a value 
+
+DECLARE 
+    NUM1 NUMBER (10);
+    NUM2 NUMBER (10);
+    MUL NUMBER (20);
+    SQ1 NUMBER (20);
+
+    -- CREATING A LOCAL FUNCTION WITHOUT RETURN 
+    -- GIVES ERROR : MULTI IS NOT A PROCEDURE WE NEED A RETURN 
+    FUNCTION MULTI (NUM1 IN NUMBER, NUM2 IN NUMBER, SQ1 OUT NUMBER) 
+    RETURN NUMBER IS 
+        BEGIN 
+            MUL:= NUM2 * NUM1;
+            SQ1:= NUM1 * NUM1;
+        END MULTI;
+BEGIN 
+    NUM1 := 7659;
+    NUM2 := 3242;
+    MULTI(NUM1, NUM2, SQ1);
+    DBMS_OUTPUT.PUT_LINE(SQ1);
+END;
